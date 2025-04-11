@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2487.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">import React from "react";</p>
+<p class="p1">import { Card, CardContent } from "@/components/ui/card";</p>
+<p class="p1">import { Button } from "@/components/ui/button";</p>
+<p class="p1">import { ShoppingCart, Star } from "lucide-react";</p>
+<p class="p1">import { motion } from "framer-motion";</p>
+<p class="p2"><br></p>
+<p class="p1">const products = [</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>id: 1,</p>
+<p class="p1"><span class="Apple-converted-space">    </span>name: "超酷太陽眼鏡",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>price: "$99",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>rating: 4.8,</p>
+<p class="p1"><span class="Apple-converted-space">    </span>image: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>id: 2,</p>
+<p class="p1"><span class="Apple-converted-space">    </span>name: "限量潮流球鞋",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>price: "$199",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>rating: 4.9,</p>
+<p class="p1"><span class="Apple-converted-space">    </span>image: "https://images.unsplash.com/photo-1600180758890-6ecae04b0812",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>id: 3,</p>
+<p class="p1"><span class="Apple-converted-space">    </span>name: "復古皮革背包",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>price: "$149",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>rating: 4.7,</p>
+<p class="p1"><span class="Apple-converted-space">    </span>image: "https://images.unsplash.com/photo-1533674689019-5b91f7e6d52c",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1">];</p>
+<p class="p2"><br></p>
+<p class="p1">export default function CoolShoppingSite() {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>return (</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-700 text-white p-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h1 className="text-4xl font-bold mb-10 text-center"&gt;🔥 酷炫購物網 🔥&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div className="grid grid-cols-1 md:grid-cols-3 gap-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{products.map((product) =&gt; (</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;motion.div</p>
+<p class="p1"><span class="Apple-converted-space">            </span>key={product.id}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>whileHover={{ scale: 1.05 }}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>className="rounded-2xl overflow-hidden shadow-lg bg-gray-800"</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;Card className="bg-gray-800 border-none"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;img</p>
+<p class="p1"><span class="Apple-converted-space">                </span>src={product.image}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>alt={product.name}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>className="w-full h-60 object-cover"</p>
+<p class="p1"><span class="Apple-converted-space">              </span>/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;CardContent className="p-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2 className="text-xl font-semibold mb-2"&gt;{product.name}&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p className="text-lg text-yellow-400 font-bold"&gt;{product.price}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div className="flex items-center text-sm text-gray-300 mt-2 mb-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;Star className="w-4 h-4 mr-1 text-yellow-400" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>{product.rating} / 5</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;Button className="w-full bg-yellow-500 hover:bg-yellow-400 text-black"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;ShoppingCart className="w-4 h-4 mr-2" /&gt; 加入購物車</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/Button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/CardContent&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/Card&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/motion.div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>))}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>);</p>
+<p class="p1">}</p>
+</body>
+</html>
